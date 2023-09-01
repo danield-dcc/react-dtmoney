@@ -23,7 +23,7 @@ interface TransactionsProviderProps {
   children: ReactNode;
 }
 
-const TransactionContext = createContext({} as TransactionContextType);
+const TransactionsContext = createContext({} as TransactionContextType);
 
 export function TransactionsProvider({ children }: TransactionsProviderProps) {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
@@ -38,11 +38,11 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
     loadTransactions();
   }, []);
   return (
-    <TransactionContext.Provider value={{ transactions }}>
+    <TransactionsContext.Provider value={{ transactions }}>
       {children}
-    </TransactionContext.Provider>
+    </TransactionsContext.Provider>
   );
 }
 
 // eslint-disable-next-line react-refresh/only-export-components
-export const useTransactions = () => useContext(TransactionContext);
+export const useTransactions = () => useContext(TransactionsContext);
