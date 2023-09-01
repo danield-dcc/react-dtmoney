@@ -16,6 +16,14 @@
       "category": "Alimentação",
       "price": 50,
       "createAt": "2023-09-01T20:25:10.586Z"
+    },
+    {
+      "id": 3,
+      "description": "Jaqueta de Inverno",
+      "type": "outcome",
+      "category": "Roupa",
+      "price": 350,
+      "createAt": "2023-09-01T20:26:10.586Z"
     }
   ]
 }
