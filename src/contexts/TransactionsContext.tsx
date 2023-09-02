@@ -1,10 +1,5 @@
-import {
-  ReactNode,
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-} from 'react'
+import { ReactNode, useEffect, useState } from 'react'
+import { createContext } from 'use-context-selector'
 import { api } from '../lib/axios'
 
 interface Transaction {
@@ -33,7 +28,7 @@ interface TransactionsProviderProps {
   children: ReactNode
 }
 
-const TransactionsContext = createContext({} as TransactionContextType)
+export const TransactionsContext = createContext({} as TransactionContextType)
 
 export function TransactionsProvider({ children }: TransactionsProviderProps) {
   const [transactions, setTransactions] = useState<Transaction[]>([])
@@ -76,4 +71,4 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
   )
 }
 
-export const useTransactions = () => useContext(TransactionsContext)
+// export const useTransactions = () => useContextSelector(TransactionsContext)
